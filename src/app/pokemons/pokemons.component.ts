@@ -1,41 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../pokemon.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pokemons',
-  standalone: true,
-  template: `
-    <div>
-      <h2>Pokemons</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Abilities</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pokemon of pokemons">
-            <td>{{ pokemon.name }}</td>
-            <td>{{ pokemon.type }}</td>
-            <td>{{ pokemon.abilities.join(', ') }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  `
+  templateUrl: './pokemons.component.html',
+  styleUrls: ['./pokemons.component.css']
 })
-export class PokemonsComponent implements OnInit {
-  pokemons: any[] = [];
-
-  constructor(private pokemonService: PokemonService) {}
-
-  ngOnInit(): void {
-    this.getPokemons();
-  }
-
-  getPokemons(): void {
-    this.pokemons = this.pokemonService.getPokemons();
-  }
+export class PokemonsComponent {
+  pokemons: string[] = ['Pikachu', 'Bulbasaur', 'Charmander', 'Squirtle'];
 }
