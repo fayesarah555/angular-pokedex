@@ -1,0 +1,14 @@
+<h2>Favorites</h2>
+
+<div *ngIf="favoritePokemons.length > 0; else noFavorites">
+  <ul>
+    <li *ngFor="let pokemonName of favoritePokemons">
+      <span>{{ pokemonName }}</span>
+      <button (click)="removeFromFavorites(pokemonName)">Remove</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noFavorites>
+  <p>No favorite Pokémon selected.</p>
+</ng-template>

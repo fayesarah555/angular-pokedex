@@ -1,0 +1,94 @@
+
+$primary-color: #3f51b5;
+$secondary-color: #ff4081;
+$table-header-color: #f5f5f5;
+$table-row-hover-color: #e3f2fd;
+$table-border-color: #e0e0e0;
+
+.table-container {
+  padding: 1rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th {
+      background-color: $table-header-color;
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      border-bottom: 1px solid $table-border-color;
+      text-align: left;
+    }
+
+    tr {
+      &:hover {
+        background-color: $table-row-hover-color;
+      }
+    }
+
+    .mat-button {
+      color: $secondary-color;
+    }
+  }
+
+  mat-paginator {
+    margin-top: 1rem;
+    color: $primary-color;
+
+    .mat-paginator-range-label,
+    .mat-paginator-page-size,
+    .mat-icon-button {
+      color: $primary-color;
+    }
+  }
+}
+
+mat-toolbar {
+  background-color: $primary-color;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0px 3px 6px rgba(95, 25, 25, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 0;
+
+  .mat-button {
+    background-color: $primary-color;
+    color: #fff;
+    
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+    }
+  }
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: $primary-color;
+}
+
+a {
+  color: $secondary-color;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
